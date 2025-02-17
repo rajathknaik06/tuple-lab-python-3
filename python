@@ -1,0 +1,37 @@
+""" Professor Adams needs to analyze student participation in three recent academic workshops. She has three sets of student IDs: the first set contains students who registered for the workshops, the second set contains students who actually attended, and the third set contains students who dropped out. 
+
+
+
+Professor Adams needs to determine which students who registered also attended, and then identify which of these students did not drop out.
+
+
+
+Help Professor Adams identify the students who registered, attended, and did not drop out of the workshops.
+
+Input format :
+The first line of input consists of integers, representing the student IDs who registered for the workshops.
+
+The second line consists of integers, representing the student IDs who attended the workshops.
+
+The third line consists of integers, representing the student IDs who dropped out of the workshops.
+
+Output format :
+The first line of output displays the intersection of the first two sets, which shows the IDs of students who registered and attended.
+
+The second line displays the result after removing student IDs that are in the third set (dropped out), showing the IDs of students who both attended and did not drop out."""
+
+
+# Take input for the three sets
+set1 = set(map(int, input().split()))
+set2 = set(map(int, input().split()))
+set3 = set(map(int, input().split()))
+
+# Find the intersection of the first two sets
+intersection = set1 & set2
+
+# Remove elements present in the third set from the intersection
+filtered_result = intersection - set3
+
+# Display the results
+print(intersection)
+print(filtered_result)
